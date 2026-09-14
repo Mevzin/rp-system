@@ -1,0 +1,16 @@
+{
+  "name": "@criminals/eslint-config",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./index.js",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.56.0",
+    "typescript": ">=5.3.0"
+  }
+}

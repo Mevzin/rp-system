@@ -1,0 +1,220 @@
+# 1) SEGREDOS ----------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+.env.*.prod
+.env.production
+.env.development.local
+.env.test.local
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+secrets/
+credentials*
+service-account.json
+.vault_pass
+
+# 2) DEPENDÊNCIAS -----------------------------------------------------------------------------
+node_modules/
+.pnp
+.pnp.js
+.pnp.cjs
+.pnp.data.json
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+bower_components
+jspm_packages
+
+# 3) PACKAGE MANAGERS / CACHE ---------------------------------------------------------------
+.pnpm-store/
+.pnpm-cache/
+.pnpm-state/
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+.cache-loader
+.rpt2_cache
+.terser
+.vite
+.node_repl_history
+
+# Turborepo / Nx
+.turbo/
+turbo-telemetry.log
+
+# pnpm workspaces / lock artifacts: mantemos pnpm-lock.yaml
+# (apagar se seu time optar por não versionar lock)
+# pnpm-lock.yaml
+
+# 4) BUILD OUTPUTS (gerados, não versionar) ------------------------------------------------
+dist/
+build/
+out/
+.next/
+.nuxt/
+.nitro/
+.cache/
+.output/
+.public/
+build-tsconfig*
+tsconfig.tsbuildinfo
+tsconfig.*.tsbuildinfo
+**/*.tsbuildinfo
+declarations/
+*.tsbuildinfo
+
+# tsup build artifacts
+.tmp
+
+# Nest.js
+coverage/
+*.js.map
+*.mjs.map
+*.cjs.map
+.docs-build/
+
+# 5) LOGS & DEBUGS --------------------------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pnpm-error.log*
+lerna-debug.log*
+.npm
+.eslint
+reports/
+*.tmp
+*.bak
+*.swp
+*.swo
+*~.swp
+
+# 6) SISTEMA OPERACIONAL / SISTEMA DE ARQUIVOS ----------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# 7) IDEs / EDITORES ------------------------------------------------------------------------
+.idea/
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/*.code-snippets
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.vim
+.vscode-test
+
+# JetBrains
+.idea_modules/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# 8) DADOS LOCAIS / UPLOADS / BANCOS (não versionar, a menos que fixtures) -----------------
+# Uploads de imagens/provas — NUNCA commitar. Manter APENAS o .gitkeep de marcador de pasta.
+# Obs: NÃO usamos regra genérica "uploads/" porque ela pegaria também a pasta
+#      apps/api/src/modules/uploads (código-fonte Nest do módulo Uploads).
+apps/api/uploads/*
+!apps/api/uploads/.gitkeep
+static/
+storage/
+attachments/
+temp/
+tmp/
+
+# SQLite (se alguém usar fallback local para testes)
+*.sqlite
+*.sqlite3
+*.db
+*.db3
+database/
+
+# 9) TESTES ----------------------------------------------------------------------------------
+coverage/
+.nyc_output/
+junit.xml
+lcov-report/
+lcov.info
+.coverage
+c8/
+.vitest/
+.test-report/
+tests/reports/
+
+# 10) DOCKER / COMPOSE (secrets locais) -----------------------------------------------------
+docker-compose.override.yml
+docker-compose.prod.yml
+.docker/
+!Dockerfile
+!.dockerignore
+data/
+mongo/
+postgres/
+
+# 11) DISCORD / LOGS BOT (arquivos temporários) --------------------------------------------
+apps/bot/logs/
+apps/bot/data/
+apps/api/logs/
+logs/
+
+# 12) MICROSOFT / WINDOWS (WSL + windows) ---------------------------------------------------
+*.wslconfig
+*.lnk
+ntuser.ini
+pagefile.sys
+swapfile.sys
+hiberfil.sys
+
+# 13) VERCEL / RAILWAY / RENDER ARTIFACTS --------------------------------------------------
+.vercel
+.railway
+.render
+.netlify
+
+# 14) MONOREPO SPECIFIC (app-level dist/.next são ignorados via glob acima) ----------------
+# Se algum pacote gerar arquivo extra local:
+packages/*/dist
+packages/*/node_modules
+apps/*/dist
+apps/*/.next
+apps/*/node_modules
+apps/*/.turbo
+packages/*/.turbo
+
+# 15) FIXTURES / SEED locais (não versionar dados reais, só fixtures) ----------------------
+seed/local/**
+!seed/fixtures/**
+
+# 16) TYPESCRIPT TEMP (ts incremental builds) ----------------------------------------------
+**/.tsbuildinfo
+tsbuildinfo
+
+# FIM ---------------------------------------------------
